@@ -331,7 +331,7 @@ const Solutions = () => {
                     {f.icon}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-3">{f.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">{f.desc}</p>
                 </motion.div>
               ))}
             </div>

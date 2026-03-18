@@ -188,7 +188,7 @@ const About = () => {
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div className="relative">
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" 
                 alt="Office" 
@@ -196,7 +196,7 @@ const About = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-slate-100 rounded-[3rem] -z-10" />
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-slate-100 rounded-2xl -z-10" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-50 rounded-full blur-[120px] -z-20" />
           </div>
 
@@ -275,7 +275,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="group bg-white p-12 rounded-[3rem] border border-slate-200 hover:border-brand-primary transition-all hover:shadow-2xl hover:shadow-blue-500/10"
+              className="group bg-white p-12 rounded-2xl border border-slate-200 hover:border-brand-primary transition-all hover:shadow-2xl hover:shadow-blue-500/10"
             >
               <div className={`w-20 h-20 ${s.light} ${s.text} rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform`}>
                 {s.icon}
@@ -309,7 +309,7 @@ const Solutions = () => {
   return (
     <section id="solutions" className="bg-white">
       <div className="section-container">
-        <div className="bg-brand-dark rounded-[4rem] p-12 md:p-24 relative overflow-hidden">
+        <div className="bg-brand-dark rounded-2xl p-12 md:p-24 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
           
           <div className="relative z-10">
@@ -327,7 +327,7 @@ const Solutions = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-blue-400 mb-6">
+                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-blue-400 mb-6">
                     {f.icon}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-3">{f.title}</h4>

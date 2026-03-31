@@ -521,15 +521,6 @@ const Footer = () => {
               <li><a href="#contact" className="hover:text-brand-primary transition-colors">Contact</a></li>
             </ul>
           </div>
-          
-          <div>
-            <h5 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Legal</h5>
-            <ul className="space-y-4 font-bold">
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Cookie Policy</a></li>
-            </ul>
-          </div>
         </div>
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-500 text-sm">

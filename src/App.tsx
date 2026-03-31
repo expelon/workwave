@@ -510,6 +510,17 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+            <div className="mt-6">
+              <p className="text-white text-sm font-medium mb-2">Our Office</p>
+              <a 
+                href="https://maps.google.com/?q=Work+Wave+Technologies,+Shop+No+16,+1st+Floor,+Azizia+Hussain+Complex,+Old+Jewargi+Rd,+opp.+PWD+Quarters,+Shastri+Nagar,+Kalaburagi,+Karnataka+585102" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-slate-400 text-sm hover:text-white transition-colors leading-relaxed"
+              >
+                Work Wave Technologies, Shop No 16, 1st Floor, Azizia Hussain Complex, Old Jewargi Rd, opp. PWD Quarters, Shastri Nagar, Kalaburagi, Karnataka 585102
+              </a>
+            </div>
           </div>
           
           <div>

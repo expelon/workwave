@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="group">
           <span className="text-xl font-black tracking-tighter text-white">
-            WORKWAVE
+            WORKWAVE TECHNOLOGIES
           </span>
         </a>
 
@@ -487,7 +487,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-8">
-              <span className="text-2xl font-black tracking-tighter">WORKWAVE</span>
+              <span className="text-2xl font-black tracking-tighter">WORKWAVE TECHNOLOGIES</span>
             </div>
             <p className="text-slate-500 text-lg max-w-md leading-relaxed">
               Redefining the HR consultancy landscape with verified opportunities and strategic career growth since 2026.

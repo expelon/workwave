@@ -492,6 +492,24 @@ const Footer = () => {
             <p className="text-slate-500 text-lg max-w-md leading-relaxed">
               Redefining the HR consultancy landscape with verified opportunities and strategic career growth since 2026.
             </p>
+            <div className="mt-6 flex items-center gap-4">
+              <img 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://g.page/r/CVqpeKQ4Zgq6EAE/review" 
+                alt="Google Review QR Code" 
+                className="w-24 h-24 border border-white/20 rounded-lg"
+              />
+              <div>
+                <p className="text-white text-sm font-medium mb-1">Leave us a Google Review</p>
+                <a 
+                  href="https://g.page/r/CVqpeKQ4Zgq6EAE/review" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-brand-primary text-xs hover:underline"
+                >
+                  Scan or click to review
+                </a>
+              </div>
+            </div>
           </div>
           
           <div>

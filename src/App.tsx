@@ -516,11 +516,7 @@ const Footer = () => {
         
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} Work Wave Technologies. All Rights Reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors">Twitter</a>
-            <a href="#" className="hover:text-white transition-colors">Instagram</a>
-          </div>
+          <p>Developed by <a href="https://www.cheersdigitalmarketing.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.cheersdigitalmarketing.com</a></p>
         </div>
       </div>
     </footer>

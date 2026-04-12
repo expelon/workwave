@@ -480,6 +480,138 @@ const Contact = () => {
   );
 };
 
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: "Rahul Sharma",
+      role: "Software Developer",
+      content: "Work Wave Technologies helped me find the perfect remote opportunity. Their verification process ensures genuine listings.",
+      rating: 5
+    },
+    {
+      name: "Priya Patel",
+      role: "Data Entry Specialist",
+      content: "Excellent platform for work-from-home jobs. The support team is very responsive and helpful throughout the process.",
+      rating: 5
+    },
+    {
+      name: "Amit Kumar",
+      role: "Project Manager",
+      content: "I found my dream job through Work Wave. The strategic career growth opportunities are unmatched in the industry.",
+      rating: 5
+    },
+    {
+      name: "Sneha Reddy",
+      role: "HR Consultant",
+      content: "Professional and trustworthy platform. They truly care about connecting the right talent with the right opportunities.",
+      rating: 5
+    },
+    {
+      name: "Vikram Singh",
+      role: "Business Analyst",
+      content: "The quality of job listings is exceptional. No fake promises, only verified and genuine opportunities.",
+      rating: 5
+    },
+    {
+      name: "Anjali Nair",
+      role: "Content Writer",
+      content: "Work Wave Technologies made my job search so much easier. Their platform is user-friendly and effective.",
+      rating: 5
+    },
+    {
+      name: "Karthik Raj",
+      role: "Web Developer",
+      content: "Fast onboarding process and great communication. I started my project within 48 hours of applying.",
+      rating: 5
+    },
+    {
+      name: "Meera Gupta",
+      role: "Digital Marketer",
+      content: "The best HR consultancy I've worked with. They understand both employer and employee needs perfectly.",
+      rating: 5
+    },
+    {
+      name: "Rohit Verma",
+      role: "UI/UX Designer",
+      content: "Amazing experience! The team guided me through every step and helped me land a great remote position.",
+      rating: 5
+    },
+    {
+      name: "Divya Menon",
+      role: "Financial Analyst",
+      content: "Work Wave Technologies stands out for their transparency and professionalism. Highly recommended!",
+      rating: 5
+    },
+    {
+      name: "Arjun Pillai",
+      role: "Technical Lead",
+      content: "Strategic career growth is real here. They don't just find you jobs, they build your career path.",
+      rating: 5
+    },
+    {
+      name: "Kavita Joshi",
+      role: "Operations Manager",
+      content: "Outstanding service from start to finish. The team's expertise in HR consultancy is evident.",
+      rating: 5
+    }
+  ];
+
+  return (
+    <section className="bg-slate-50 py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Testimonials</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">What Our Clients Say</h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            Real experiences from professionals who have transformed their careers with Work Wave Technologies
+          </p>
+        </div>
+
+        <div className="relative">
+          <div className="flex gap-6 animate-scroll">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div
+                key={index}
+                className="min-w-[350px] bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
+              >
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                <div>
+                  <p className="font-bold text-slate-900">{testimonial.name}</p>
+                  <p className="text-slate-500 text-sm">{testimonial.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  );
+};
+
 const MapSection = () => {
   return (
     <section className="bg-white py-16">
@@ -584,6 +716,7 @@ export default function App() {
         <About />
         <Services />
         <Solutions />
+        <Testimonials />
         <Branches />
         <Contact />
         <MapSection />

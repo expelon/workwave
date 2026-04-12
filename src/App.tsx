@@ -481,6 +481,18 @@ const Contact = () => {
 };
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const testimonials = [
     {
       name: "Rahul Sharma",
@@ -556,6 +568,14 @@ const Testimonials = () => {
     }
   ];
 
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <section className="bg-slate-50 py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -568,28 +588,91 @@ const Testimonials = () => {
         </div>
 
         <div className="relative">
-          <div className="flex gap-4 md:gap-6 animate-scroll">
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
-                key={index}
-                className="min-w-[280px] md:min-w-[350px] bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-200"
+          {/* Mobile Navigation */}
+          {isMobile && (
+            <>
+              <button
+                onClick={handlePrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-slate-200 flex items-center justify-center text-slate-900 hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="Previous testimonial"
               >
-                <div className="flex mb-3 md:mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg border border-slate-200 flex items-center justify-center text-slate-900 hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="Next testimonial"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
+
+          {/* Mobile: Single Card */}
+          {isMobile && (
+            <div className="flex justify-center px-12">
+              <div className="w-full max-w-sm bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
+                <div className="flex mb-3">
+                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-700 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">"{testimonial.content}"</p>
+                <p className="text-slate-700 mb-4 leading-relaxed text-sm">"{testimonials[currentIndex].content}"</p>
                 <div>
-                  <p className="font-bold text-slate-900 text-sm md:text-base">{testimonial.name}</p>
-                  <p className="text-slate-500 text-xs md:text-sm">{testimonial.role}</p>
+                  <p className="font-bold text-slate-900 text-sm">{testimonials[currentIndex].name}</p>
+                  <p className="text-slate-500 text-xs">{testimonials[currentIndex].role}</p>
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* Desktop: Auto-scrolling Cards */}
+          {!isMobile && (
+            <div className="flex gap-6 animate-scroll">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="min-w-[350px] bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
+                >
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-slate-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                  <div>
+                    <p className="font-bold text-slate-900">{testimonial.name}</p>
+                    <p className="text-slate-500 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Mobile Dots Indicator */}
+        {isMobile && (
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-brand-primary' : 'bg-slate-300'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
             ))}
           </div>
-        </div>
+        )}
       </div>
 
       <style jsx>{`
@@ -603,11 +686,6 @@ const Testimonials = () => {
         }
         .animate-scroll {
           animation: scroll 20s linear infinite;
-        }
-        @media (max-width: 768px) {
-          .animate-scroll {
-            animation: scroll 15s linear infinite;
-          }
         }
         .animate-scroll:hover {
           animation-play-state: paused;

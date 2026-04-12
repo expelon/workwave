@@ -480,6 +480,31 @@ const Contact = () => {
   );
 };
 
+const MapSection = () => {
+  return (
+    <section className="bg-white py-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Visit Our Office</h2>
+          <p className="text-lg text-slate-600">Find us at our headquarters in Kalaburagi, Karnataka</p>
+        </div>
+        <div className="rounded-lg overflow-hidden shadow-lg border border-slate-200">
+          <iframe 
+            src="https://www.google.com/maps?q=Work+Wave+Technologies,+Shop+No+16,+1st+Floor,+Azizia+Hussain+Complex,+Old+Jewargi+Rd,+Shastri+Nagar,+Kalaburagi,+Karnataka+585102&output=embed"
+            width="100%" 
+            height="400" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Work Wave Technologies Office Location"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="bg-brand-dark text-white py-24">
@@ -509,17 +534,6 @@ const Footer = () => {
                   Scan or click to review
                 </a>
               </div>
-            </div>
-            <div className="mt-6">
-              <p className="text-white text-sm font-medium mb-2">Our Office</p>
-              <a 
-                href="https://maps.google.com/?q=Work+Wave+Technologies,+Shop+No+16,+1st+Floor,+Azizia+Hussain+Complex,+Old+Jewargi+Rd,+opp.+PWD+Quarters,+Shastri+Nagar,+Kalaburagi,+Karnataka+585102" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 text-sm hover:text-white transition-colors leading-relaxed"
-              >
-                Work Wave Technologies, Shop No 16, 1st Floor, Azizia Hussain Complex, Old Jewargi Rd, opp. PWD Quarters, Shastri Nagar, Kalaburagi, Karnataka 585102
-              </a>
             </div>
           </div>
           
@@ -572,6 +586,7 @@ export default function App() {
         <Solutions />
         <Branches />
         <Contact />
+        <MapSection />
       </main>
       <Footer />
       <FloatingAction />

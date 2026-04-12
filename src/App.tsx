@@ -581,7 +581,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Testimonials</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">What Our Clients Say</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Professional Testimonials</h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Real experiences from professionals who have transformed their careers with Work Wave Technologies
           </p>

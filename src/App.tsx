@@ -568,23 +568,23 @@ const Testimonials = () => {
         </div>
 
         <div className="relative">
-          <div className="flex gap-6 animate-scroll">
+          <div className="flex gap-4 md:gap-6 animate-scroll">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="min-w-[350px] bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
+                className="min-w-[280px] md:min-w-[350px] bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-200"
               >
-                <div className="flex mb-4">
+                <div className="flex mb-3 md:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                     </svg>
                   ))}
                 </div>
-                <p className="text-slate-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-slate-700 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">"{testimonial.content}"</p>
                 <div>
-                  <p className="font-bold text-slate-900">{testimonial.name}</p>
-                  <p className="text-slate-500 text-sm">{testimonial.role}</p>
+                  <p className="font-bold text-slate-900 text-sm md:text-base">{testimonial.name}</p>
+                  <p className="text-slate-500 text-xs md:text-sm">{testimonial.role}</p>
                 </div>
               </div>
             ))}
@@ -602,7 +602,12 @@ const Testimonials = () => {
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 20s linear infinite;
+        }
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll 15s linear infinite;
+          }
         }
         .animate-scroll:hover {
           animation-play-state: paused;
